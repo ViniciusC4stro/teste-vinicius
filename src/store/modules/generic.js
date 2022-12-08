@@ -3,16 +3,49 @@ import axios from '@/config/axios';
 export default {
     namespaced: true,
     state: {
-        user: "",
         notifications: [],
         loading: [],
+        event: {
+            dateTime: undefined,
+            name: undefined,
+            data: {},
+        },
         methodExecutedApi: undefined,
     },
-    mutations: {
-        addUser: (state, name) => {
-            state.user = name;
+    getters: {
+        isLoading: (state) => (key) => {
+            var loading = state.loading.find((value) => {
+                return value === key;
+            });
+
+            if (loading) return true;
+            return false;
         },
     },
+    mutations: {
+        addLoading: (state, key) => {
+            state.loading.push(key);
+        },
+        removeLoading: (state, listKey) => {
+            listKey.forEach(function (key) {
+                let filter = state.loading.filter(function (item) {
+                    return item != key;
+                });
+                state.loading = filter;
+            });
+        },
+        addEvent: (state, obj) => {
+            setTimeout(function () {
+                state.event.dateTime = new Date();
+                state.event.name = obj.name;
+                state.event.data = obj.data;
+            }, 100);
+        },
+        removeEvent: (state) => {
+            state.event = {};
+        },
+    },
+
     actions: {
         postApi: async function (context, params) {
 

@@ -6,34 +6,46 @@
 
     <FlexboxLayout class="page" flexDirection="column" justifyContent="center">
       <StackLayout class="container">
-        <Image
-          src="https://nixloc.com.br/wp-content/themes/nix-loc/images/logo_nixweb.png"
-          class="logo-container"
-        />
+        <Image src="~/logo.png" class="logo-container" />
       </StackLayout>
 
       <StackLayout class="container login">
-        <Label textAlignment="center" :text="user" />
-      </StackLayout>
-
-      <StackLayout class="container margin-input">
-        <TextField hint="Usuário" class="form-input" v-model="login.userName" />
-      </StackLayout>
-
-      <StackLayout class="container margin-input">
-        <TextField hint="Senha" class="form-input" v-model="login.password" />
+        <Label textAlignment="left" text="Login de acesso" />
       </StackLayout>
 
       <StackLayout class="container">
-        <Button text="Login" @tap="auth" class="btn" />
+        <InputText title="Usuário" :required="true" v-model="login.userName" />
+      </StackLayout>
+
+      <StackLayout class="container">
+        <InputText
+          title="Senha"
+          :required="true"
+          :secure="true"
+          v-model="login.password"
+        />
+      </StackLayout>
+
+      <StackLayout class="container-btn">
+        <UIButton
+          _key="btnAuth"
+          title="Entrar"
+          type="primary"
+          size="small"
+          :clicked="auth"
+        />
       </StackLayout>
     </FlexboxLayout>
   </Page>
 </template>
 <script>
+import InputText from "../../components/forms/InputText.vue";
+import UIButton from "../../components/forms/UIButton.vue";
+
 import { mapActions, mapState, mapMutations } from "vuex";
 
 export default {
+  components: { UIButton, InputText },
   name: "LoginView",
   data() {
     return {
@@ -42,11 +54,11 @@ export default {
     };
   },
   computed: {
-    ...mapState("generic", ["user"]),
+    ...mapState("generic", ["event"]),
   },
   methods: {
     ...mapActions("generic", ["postApi"]),
-    ...mapMutations("generic", ["addUser"]),
+    ...mapMutations("generic", ["removeLoading"]),
     auth() {
       console.log("Iniciando login");
 
@@ -59,10 +71,11 @@ export default {
       };
       this.postApi(params).then((response) => {
         if (response.success) {
-          this.addUser(response.content.user.name);
+          alert("Opa, deu certo!");
         } else {
           alert("Ixii, deu erro!");
         }
+        this.removeLoading(["btnAuth"]);
         console.log("Finalizando login");
       });
     },
@@ -78,6 +91,7 @@ export default {
 .login {
   font-size: 20;
   margin-bottom: 20;
+  color: black;
 }
 
 .container {
@@ -85,17 +99,19 @@ export default {
   margin-right: 30;
 }
 
+.container-btn {
+  margin-top: 20;
+  margin-left: 30;
+  margin-right: 30;
+}
+
 .logo-container {
-  width: 200;
+  width: 180;
   margin-bottom: 30;
 }
 
 .margin-input {
   margin-bottom: 20;
-}
-
-.btn {
-  background-color: red;
 }
 
 .form-input {
