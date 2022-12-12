@@ -1,12 +1,9 @@
 <template>
-  <Page>
-    <ActionBar>
-      <Label text="Home" class="font-bold text-lg" />
-    </ActionBar>
+  <Page actionBarHidden="true">
 
     <FlexboxLayout class="page" flexDirection="column" justifyContent="center">
       <StackLayout class="container">
-        <Image src="~/logo.png" class="logo-container" />
+        <Image src="~/images/logo.png" class="logo-container" />
       </StackLayout>
 
       <StackLayout class="container login">
@@ -39,8 +36,8 @@
   </Page>
 </template>
 <script>
-import InputText from "../../components/forms/InputText.vue";
-import UIButton from "../../components/forms/UIButton.vue";
+import InputText from "../../../components/forms/InputText.vue";
+import UIButton from "../../../components/forms/UIButton.vue";
 
 import { mapActions, mapState, mapMutations } from "vuex";
 
@@ -84,44 +81,44 @@ export default {
 </script>
 <style scoped>
 .page {
-  background-color: white;
-  height: 100%;
-}
-
-.login {
-  font-size: 20;
-  margin-bottom: 20;
-  color: black;
-}
-
-.container {
-  margin-left: 30;
-  margin-right: 30;
-}
-
-.container-btn {
-  margin-top: 20;
-  margin-left: 30;
-  margin-right: 30;
-}
-
-.logo-container {
-  width: 180;
-  margin-bottom: 30;
-}
-
-.margin-input {
-  margin-bottom: 20;
-}
-
-.form-input {
-  color: #495057;
-  placeholder-color: #495057;
-  border-width: 1;
-  width: 100%;
-}
-
-.teste {
-  color: black;
-}
+    background-color: white;
+    height: 100%;
+  }
+  
+  .login {
+    font-size: 20;
+    margin-bottom: 20;
+    color: black;
+  }
+  
+  .container {
+    margin-left: 30;
+    margin-right: 30;
+  }
+  
+  .container-btn {
+    margin-top: 20;
+    margin-left: 30;
+    margin-right: 30;
+  }
+  
+  .logo-container {
+    width: 180;
+    margin-bottom: 30;
+  }
+  
+  .margin-input {
+    margin-bottom: 20;
+  }
+  
+  .form-input {
+    color: #495057;
+    placeholder-color: #495057;
+    border-width: 1;
+    width: 100%;
+  }
+  
+  .teste {
+    color: black;
+  }
 </style>

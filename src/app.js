@@ -1,6 +1,6 @@
 import Vue from 'nativescript-vue'
 
-import Login from './views/adm/Login'
+import Login from './views/adm/login/Login'
 
 import store from './store/store'
 
