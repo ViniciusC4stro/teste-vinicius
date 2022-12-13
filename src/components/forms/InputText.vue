@@ -3,7 +3,7 @@
     <StackLayout class="label-container">
       <FlexboxLayout
         alignItems="center"
-        justifyContent="space-between"
+        justifyContent="left"
         class="label"
       >
         <Label :text="title" />

@@ -87,6 +87,7 @@ export default {
   
   .login {
     font-size: 20;
+    font-family: 'Inter Black';
     margin-bottom: 20;
     color: black;
   }
