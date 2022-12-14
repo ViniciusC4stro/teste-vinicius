@@ -3,7 +3,7 @@
 
     <FlexboxLayout class="page" flexDirection="column" justifyContent="center">
       <StackLayout class="container">
-        <Image src="~/images/logo.png" class="logo-container" />
+        <Image src="~/images/logo.png" stretch="none" class="logo-container" />
       </StackLayout>
 
       <StackLayout class="container login">

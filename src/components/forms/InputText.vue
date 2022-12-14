@@ -12,6 +12,7 @@
     </StackLayout>
     <StackLayout class="input-container">
       <TextField @textChange="textChange" :secure="secure" v-model="text" class="form-input" />
+      <Label class="fa" :text="'fa-user' | fonticon" />
     </StackLayout>
   </StackLayout>
 </template>
@@ -51,6 +52,10 @@ export default {
   margin-bottom: 10;
 }
 
+.icon-black {
+  color: black;
+}
+
 .label {
   color: #495057;
 }
@@ -65,4 +70,5 @@ export default {
   border-width: 0;
   width: 100%;
 }
+
 </style>
