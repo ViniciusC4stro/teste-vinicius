@@ -1,17 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('./fonts/interFont/');
 
 ActionBar {
     background-color: #65adf1;
     color: white;
 }
 
-.Inter {
-    font-family: 'Inter', 'Inter Medium' ,'Inter Black';
+.interRegular {
+  font-family: Inter-Regular, Inter ;
+}
+
+.interBold {
+    font-family: Inter-Bold, Inter ;
 }
 
   .fa {
     font-family: FontAwesome, fontawesome-webfont;
   }
+
+  .fas {
+    font-family: 'Font Awesome 5 Free', 'fa-solid-900';
+    font-weight: 900;
+   }
+
+   .fontAwesome {
+    font-family: FontAwesome;
+   }

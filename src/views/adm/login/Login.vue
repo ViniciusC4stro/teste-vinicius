@@ -3,11 +3,11 @@
 
     <FlexboxLayout class="page" flexDirection="column" justifyContent="center">
       <StackLayout class="container">
-        <Image src="~/images/logo.png" stretch="none" class="logo-container" />
+        <Image src="~/assets/images/logo.png" stretch="fill" class="logo-container" />
       </StackLayout>
 
       <StackLayout class="container login">
-        <Label textAlignment="left" text="Login de acesso" />
+        <Label class="interBold" textAlignment="left" text="Login de acesso" />
       </StackLayout>
 
       <StackLayout class="container">
@@ -36,6 +36,7 @@
   </Page>
 </template>
 <script>
+
 import InputText from "../../../components/forms/InputText.vue";
 import UIButton from "../../../components/forms/UIButton.vue";
 
@@ -80,46 +81,8 @@ export default {
 };
 </script>
 <style scoped>
-.page {
-    background-color: white;
-    height: 100%;
-  }
-  
-  .login {
-    font-size: 20;
-    font-family: 'Inter Black';
-    margin-bottom: 20;
-    color: black;
-  }
-  
-  .container {
-    margin-left: 30;
-    margin-right: 30;
-  }
-  
-  .container-btn {
-    margin-top: 20;
-    margin-left: 30;
-    margin-right: 30;
-  }
-  
-  .logo-container {
-    width: 180;
-    margin-bottom: 30;
-  }
-  
-  .margin-input {
-    margin-bottom: 20;
-  }
-  
-  .form-input {
-    color: #495057;
-    placeholder-color: #495057;
-    border-width: 1;
-    width: 100%;
-  }
-  
-  .teste {
-    color: black;
-  }
+@import './Login.android.css';
+@import './Login.ios.css';
+@import '../../../app.css';
+
 </style>

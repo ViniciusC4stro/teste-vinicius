@@ -12,7 +12,6 @@
     </StackLayout>
     <StackLayout class="input-container">
       <TextField @textChange="textChange" :secure="secure" v-model="text" class="form-input" />
-      <Label class="fa" :text="'fa-user' | fonticon" />
     </StackLayout>
   </StackLayout>
 </template>
@@ -38,7 +37,9 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style scoped>
+
+@import '../../app.css';
 .input-container {
   border-width: 1;
   border-color: #e5e4e8;

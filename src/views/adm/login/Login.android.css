@@ -1,0 +1,43 @@
+
+.page {
+    background-color: white;
+    height: 100%;
+  }
+  
+  .login {
+    font-size: 20;
+    margin-bottom: 20;
+    color: black;
+  }
+  
+  .container {
+    margin-left: 30;
+    margin-right: 30;
+  }
+  
+  .container-btn {
+    margin-top: 20;
+    margin-left: 30;
+    margin-right: 30;
+  }
+  
+  .logo-container {
+    width: 180;
+    margin-bottom: 30;
+  }
+  
+  .margin-input {
+    margin-bottom: 20;
+  }
+  
+  .form-input {
+    color: #495057;
+    placeholder-color: #495057;
+    border-width: 1;
+    width: 100%;
+  }
+  
+  .fas {
+    font-family: 'Font Awesome 5 Free', 'fa-solid-900';
+    font-weight: 900;
+   }

@@ -1,5 +1,5 @@
 <template>
-  <StackLayout>
+  <StackLayout class="button-area">
     <Button
       :text="title"
       class="button"
@@ -15,7 +15,6 @@
         medium: size == 'medium',
         large: size == 'large',
       }"
-      :isEnabled="!disabled"
     />
     <ActivityIndicator v-else busy="true" class="loading" />
   </StackLayout>
@@ -64,7 +63,7 @@ export default {
 
 
 
-<style lang="scss" scoped>
+<style scoped>
 .button {
   border-radius: 25;
   letter-spacing: 0.1;
