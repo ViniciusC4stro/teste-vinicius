@@ -7,12 +7,12 @@ ActionBar {
     color: white;
 }
 
-.interRegular {
-  font-family: Inter-Regular, Inter ;
+.inter-regular {
+  font-family: 'Inter', 'Inter-Regular';
 }
 
-.interBold {
-    font-family: Inter-Bold, Inter ;
+.rubik-regular {
+  font-family: 'Rubik Spray Paint', 'RubikSprayPaint-Regular';
 }
 
   .fa {

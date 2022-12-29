@@ -1,5 +1,6 @@
 <template>
   <StackLayout>
+
     <StackLayout class="label-container">
       <FlexboxLayout
         alignItems="center"
@@ -10,9 +11,16 @@
         <Label text="*" v-if="required" class="label-danger" />
       </FlexboxLayout>
     </StackLayout>
-    <StackLayout class="input-container">
-      <TextField @textChange="textChange" :secure="secure" v-model="text" class="form-input" />
+    
+    <StackLayout>
+      <FlexboxLayout 
+        class="input-container" 
+        >
+        <TextField @textChange="textChange" :secure="secure" v-model="text" class="form-input"/>
+        <label class="fas" :text.decode="text" style="padding-right: 5"/>
+      </FlexboxLayout>
     </StackLayout>
+
   </StackLayout>
 </template>
 <script>
@@ -24,6 +32,7 @@ export default {
     required: Boolean,
     secure: Boolean,
     value: String,
+    text: String,
   },
   data() {
     return {
@@ -39,8 +48,9 @@ export default {
 </script>
 <style scoped>
 
-@import '../../app.css';
 .input-container {
+  align-items: center;
+  justify-content: space-between;
   border-width: 1;
   border-color: #e5e4e8;
   border-radius: 10;
@@ -69,7 +79,7 @@ export default {
   color: #495057;
   placeholder-color: #495057;
   border-width: 0;
-  width: 100%;
+  width: 80%;
 }
 
 </style>

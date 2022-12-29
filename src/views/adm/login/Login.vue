@@ -3,19 +3,20 @@
 
     <FlexboxLayout class="page" flexDirection="column" justifyContent="center">
       <StackLayout class="container">
-        <Image src="~/assets/images/logo.png" stretch="fill" class="logo-container" />
+        <Image src="~/assets/images/logo.png" class="logo-container" />
       </StackLayout>
 
       <StackLayout class="container login">
-        <Label class="interBold" textAlignment="left" text="Login de acesso" />
+        <Label class="login inter-regular" textAlignment="left" text="Login de acesso" />
       </StackLayout>
 
       <StackLayout class="container">
-        <InputText title="Usuário" :required="true" v-model="login.userName" />
+        <InputText class="inter-regular" text.decode="&#xf007;" title="Usuário" :required="true" v-model="login.userName" />
       </StackLayout>
 
       <StackLayout class="container">
-        <InputText
+        <InputText 
+          class="inter-regular"
           title="Senha"
           :required="true"
           :secure="true"
@@ -25,6 +26,7 @@
 
       <StackLayout class="container-btn">
         <UIButton
+          class="inter-regular"
           _key="btnAuth"
           title="Entrar"
           type="primary"

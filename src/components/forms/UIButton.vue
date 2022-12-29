@@ -1,10 +1,7 @@
 <template>
-  <StackLayout class="button-area">
-    <Button
-      :text="title"
+  <StackLayout
       class="button"
-      v-if="!isLoading(_key)"
-      @tap="execute"
+      @tap="Loading = !Loading"
       :class="{
         primary: type == 'primary',
         info: type == 'info',
@@ -15,7 +12,8 @@
         medium: size == 'medium',
         large: size == 'large',
       }"
-    />
+      >
+      <label v-if="!Loading" :text="title" style="margin-left: 137; font-size: 17;" class="inter-regular"/> 
     <ActivityIndicator v-else busy="true" class="loading" />
   </StackLayout>
 </template>
@@ -37,7 +35,9 @@ export default {
     clicked: Function,
   },
   data() {
-    return {};
+    return {
+      Loading: false
+    };
   },
   computed: {
     ...mapGetters("generic", ["isLoading"]),
@@ -71,7 +71,7 @@ export default {
 }
 
 .loading {
-  color: #577696;
+  color: #fff;
   width: 30;
   height: 30;
 }
