@@ -1,7 +1,7 @@
 <template>
   <StackLayout
       class="button"
-      @tap="Loading = !Loading"
+      @tap="execute"
       :class="{
         primary: type == 'primary',
         info: type == 'info',
@@ -13,7 +13,7 @@
         large: size == 'large',
       }"
       >
-      <label v-if="!Loading" :text="title" style="margin-left: 137; font-size: 17;" class="inter-regular"/> 
+    <label v-if="!isLoading(_key)" :text="title" style="; font-size: 17;" class="inter-regular"/> 
     <ActivityIndicator v-else busy="true" class="loading" />
   </StackLayout>
 </template>
