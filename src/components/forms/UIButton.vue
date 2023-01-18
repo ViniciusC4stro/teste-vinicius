@@ -1,5 +1,6 @@
 <template>
-  <StackLayout
+  <FlexboxLayout justifyContent="center">
+    <StackLayout
       class="button"
       @tap="execute"
       :class="{
@@ -13,9 +14,10 @@
         large: size == 'large',
       }"
       >
-    <label v-if="!isLoading(_key)" :text="title" style="; font-size: 17;" class="inter-regular"/> 
-    <ActivityIndicator v-else busy="true" class="loading" />
-  </StackLayout>
+      <label v-if="!isLoading(_key)" :text="title" style="; font-size: 17;" class="inter-regular"/> 
+      <ActivityIndicator v-else busy="true" class="loading" />
+    </StackLayout>
+</FlexboxLayout>
 </template>
 
 <script>
@@ -65,9 +67,17 @@ export default {
 
 <style scoped>
 .button {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   border-radius: 25;
   letter-spacing: 0.1;
   margin-bottom: 10;
+}
+
+.button-area {
+  align-items: center;
+  justify-content: center;
 }
 
 .loading {
