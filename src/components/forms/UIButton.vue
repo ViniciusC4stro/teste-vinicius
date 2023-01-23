@@ -13,11 +13,13 @@
         medium: size == 'medium',
         large: size == 'large',
       }"
-      >
-      <label v-if="!isLoading(_key)" :text="title" style="; font-size: 17;" class="inter-regular"/> 
+    >
+      <FlexboxLayout justifyContent="center" v-if="!isLoading(_key)">
+        <label :text="title" style="font-size: 17" class="inter-regular"/>
+      </FlexboxLayout>
       <ActivityIndicator v-else busy="true" class="loading" />
     </StackLayout>
-</FlexboxLayout>
+  </FlexboxLayout>
 </template>
 
 <script>
@@ -28,6 +30,7 @@ export default {
   props: {
     _key: String,
     title: String,
+    titleSize: String,
     type: String,
     size: String,
     eventName: String,
@@ -38,7 +41,7 @@ export default {
   },
   data() {
     return {
-      Loading: false
+      Loading: false,
     };
   },
   computed: {
@@ -59,11 +62,6 @@ export default {
   },
 };
 </script>
-
-
-
-
-
 
 <style scoped>
 .button {
@@ -133,4 +131,9 @@ export default {
   background: #f0134d;
   color: #fff;
 }
+
+.title-medium {
+  font-size: 50;
+}
+
 </style>

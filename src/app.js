@@ -1,10 +1,13 @@
 import Vue from 'nativescript-vue'
 
 import Login from './views/adm/login/Login'
+import Calendar from './views/adm/teste/Teste'
 
 import FontIcon from 'nativescript-vue-fonticon'
 
 import store from './store/store'
+
+// import CalendarView from 'nativescript-ui-calendar/vue';
 
 import './app.css'
 
@@ -19,7 +22,7 @@ Vue.use(FontIcon, {
 })
 
 new Vue({
-  render: (h) => h('frame', [h(Login)]),
+  render: (h) => h('frame', [h(Teste)]),
   store: store,
 }).$start()
 

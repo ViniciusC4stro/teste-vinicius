@@ -29,6 +29,7 @@
           class="inter-regular"
           _key="btnAuth"
           title="Entrar"
+          titleSize="title-medium"
           type="primary"
           size="small"
           :clicked="auth"
@@ -41,7 +42,6 @@
 
 import InputText from "../../../components/forms/InputText.vue";
 import UIButton from "../../../components/forms/UIButton.vue";
-
 import { mapActions, mapState, mapMutations } from "vuex";
 
 export default {
