@@ -10,6 +10,9 @@ import store from './store/store'
 // import CalendarView from 'nativescript-ui-calendar/vue';
 
 import './app.css'
+import RadCalendar from 'nativescript-ui-calendar/vue'
+
+Vue.use(RadCalendar)
 
 Vue.config.silent = !__DEV__
 
@@ -22,7 +25,7 @@ Vue.use(FontIcon, {
 })
 
 new Vue({
-  render: (h) => h('frame', [h(Teste)]),
+  render: (h) => h('frame', [h(Calendar)]),
   store: store,
 }).$start()
 

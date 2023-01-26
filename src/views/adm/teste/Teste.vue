@@ -1,49 +1,38 @@
 <template>
-    <page>
-        <StackLayout>
-            <RadCalendar>
-                :monthViewStyle='monthViewStyle'
-                :weekViewStyle='weekViewStyle'
-                :monthNamesViewStyle='monthNamesViewStyle'
-                :yearViewStyle='yearViewStyle'
-                :dayViewStyle='dayViewStyle'
-            </RadCalendar>
-        </StackLayout>
-    </page>
+  <Page>
+    <RadCalendar :events="events"
+      :minDate="minDate"
+      :maxDate="maxDate"
+      :viewMode="viewMode"
+      @dateSelected="dateSelected"
+      @viewModeChanged="viewModeChanged"
+    ></RadCalendar>
+  </Page>
 </template>
 
 <script>
-import { Frame } from "tns-core-modules/ui/frame";
-// >> calendar-cellstyling-vue
-import { Color } from "tns-core-modules/color";
-import {
-  AllDayEventsViewStyle,
-  CalendarMonthViewStyle,
-  CalendarWeekViewStyle,
-  CalendarYearViewStyle,
-  CalendarMonthNamesViewStyle,
-  CalendarSelectionShape,
-  CalendarCellAlignment,
-  CalendarDayViewStyle,
-  CellStyle,
-  DayCellStyle,
-  DayEventsViewStyle,
-  MonthCellStyle,
-  CalendarFontStyle,
-  RadCalendar,
-} from "nativescript-ui-calendar";
-
 export default {
-    name: 'testCalendar',
-    data() {
-        return {
-
-        }
+  data() {
+    return {
+      events: [
+        { title: "Event 1", startDate: new Date(2022, 0, 1)},
+        { title: "Event 2", startDate: new Date(2022, 0, 15)}
+      ],
+      minDate: new Date(2022, 0, 1),
+      maxDate: new Date(2023, 11, 31),
+      viewMode: 'Month'
+    };
+  },
+  methods: {
+    dateSelected(args) {
+      console.log("Selected date: ", args.date);
+    },
+    viewModeChanged(args) {
+      console.log("New view mode: ", args.newValue);
     }
-}
-
+  }
+};
 </script>
-
+  
 <style scoped>
-
 </style>
