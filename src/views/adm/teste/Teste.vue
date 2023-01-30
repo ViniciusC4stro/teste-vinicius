@@ -1,6 +1,8 @@
 <template>
   <Page>
-    <RadCalendar :events="events"
+    <RadCalendar 
+      locale="pt-br"
+      :events="events"
       :minDate="minDate"
       :maxDate="maxDate"
       :viewMode="viewMode"
