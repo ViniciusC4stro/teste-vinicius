@@ -1,6 +1,10 @@
 <template>
   <Page>
-    <RadCalendar 
+    <ActionBar title="Calendário"> </ActionBar>
+    <RadCalendar
+      class="calendar-style"
+      cellBackgroundColor="#00FF00"
+      ref="calendar"
       locale="pt-br"
       :events="events"
       :minDate="minDate"
@@ -8,21 +12,23 @@
       :viewMode="viewMode"
       @dateSelected="dateSelected"
       @viewModeChanged="viewModeChanged"
-    ></RadCalendar>
+    />
   </Page>
 </template>
 
 <script>
+import RadCalendar from "nativescript-ui-calendar";
+
 export default {
   data() {
     return {
       events: [
-        { title: "Event 1", startDate: new Date(2022, 0, 1)},
-        { title: "Event 2", startDate: new Date(2022, 0, 15)}
+        { title: "Event 1", startDate: new Date(2022, 0, 1) },
+        { title: "Event 2", startDate: new Date(2022, 0, 15) },
       ],
       minDate: new Date(2022, 0, 1),
       maxDate: new Date(2023, 11, 31),
-      viewMode: 'Month'
+      viewMode: "Month",
     };
   },
   methods: {
@@ -31,10 +37,13 @@ export default {
     },
     viewModeChanged(args) {
       console.log("New view mode: ", args.newValue);
-    }
-  }
+    },
+  },
 };
 </script>
-  
+
 <style scoped>
+.calendar-style {
+  margin-top: 10;
+}
 </style>
